@@ -4,14 +4,17 @@ N = int(sys.stdin.readline().strip())
 M = int(sys.stdin.readline().strip())
 S = sys.stdin.readline().strip()
 
-S = S.split('I')
-
 num = 0
-for i in range(len(S)-N):
-    for j in range(i, i+N):
-        if S[j] != 'O':
-            break
-        elif j == i+N-1:
+count = 0
+i = 1
+while i < len(S)-1:
+    if S[i-1] == 'I' and S[i] == 'O' and S[i+1] == 'I':
+        count += 1
+        if count >= N:
             num += 1
-
+        i += 2
+    else:
+        count = 0
+        i += 1
+    
 print(num)
