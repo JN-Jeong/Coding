@@ -7,7 +7,7 @@ for _ in range(connect):
     net[a].append(b)
     net[b].append(a)
 
-# print(net) # 각 index번 컴퓨터에 연결된 컴퓨터 번호가 저장됨
+print(net) # 각 index번 컴퓨터에 연결된 컴퓨터 번호가 저장됨
 
 cnt = 0
 visited = [0]*(n+1)
