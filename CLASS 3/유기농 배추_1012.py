@@ -12,13 +12,13 @@ def bfs(a, b, loc):
 
     while q:
         x, y = q.pop()
-        for i in range(4):
+        for i in range(4): # 상하좌우에서 1을 찾음
             nx = x + dx[i]
             ny = y + dy[i]
             if nx < 0 or nx >= M or ny < 0 or ny >= N: # 땅의 범위를 벗어났을 때 continue
                 continue
             if loc[nx][ny] == 1: # 값이 1이라면(배추가 심어져있다면)
-                loc[nx][ny] = 0
+                loc[nx][ny] = 0  # 다시 방문하는 것을 방지하기 위해 값을 0으로 설정
                 q.append((nx, ny))
     return
 
