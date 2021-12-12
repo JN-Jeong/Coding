@@ -1,3 +1,4 @@
+# 미완료
 N, r, c = map(int, input().split())
 
 board = 
