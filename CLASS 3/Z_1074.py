@@ -3,6 +3,9 @@ N, r, c = map(int, input().split())
 
 board = 
 
+def Z(x, y):
+
+
 0,0
 0,2
 2,0
@@ -19,3 +22,4 @@ board =
 4,6
 6,4
 6,6
+0,8
