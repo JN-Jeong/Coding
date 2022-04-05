@@ -5,6 +5,7 @@ for t in range(1, T+1):
     subsets = []
     N, K = map(int, input().split())
     
+    # 순열
     for i in range(1<<len(A)): # 모든 부분 집합 만들기
         subset = []
         for j in range(len(A)):
