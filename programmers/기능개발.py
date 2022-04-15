@@ -29,7 +29,7 @@ progresses	speeds	return
 따라서 5일째에 1개의 기능, 10일째에 3개의 기능, 20일째에 2개의 기능이 배포됩니다.
 '''
 
-from math import ceil
+from math import ceil # 실수 올림
 def solution(progresses, speeds):
     answer = []
     dist = []
