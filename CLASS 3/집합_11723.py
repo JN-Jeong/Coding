@@ -1,4 +1,4 @@
-'''
+"""
 비어있는 공집합 S가 주어졌을 때, 아래 연산을 수행하는 프로그램을 작성하시오.
 
 add x: S에 x를 추가한다. (1 ≤ x ≤ 20) S에 x가 이미 있는 경우에는 연산을 무시한다.
@@ -61,7 +61,7 @@ check 1
 0
 1
 0
-'''
+"""
 import sys
 
 M = int(sys.stdin.readline())
@@ -71,22 +71,22 @@ for i in range(M):
     input_ = sys.stdin.readline().split()
 
     if len(input_) == 1:
-        if input_[0] == 'all':
+        if input_[0] == "all":
             S = set([i for i in range(1, 21)])
-        elif input_[0] == 'empty':
+        elif input_[0] == "empty":
             S = set()
     else:
         com, num = input_[0], int(input_[1])
-        if com == 'add':
+        if com == "add":
             S.add(num)
-        elif com == 'remove':
-            S.discard(num) # discard 대신 remove 메소드를 쓰면 해당 원소가 존재하지 않을 때 KeyError 발생
-        elif com == 'check':
+        elif com == "remove":
+            S.discard(num)  # discard 대신 remove 메소드를 쓰면 해당 원소가 존재하지 않을 때 KeyError 발생
+        elif com == "check":
             if num in S:
                 print(1)
             else:
                 print(0)
-        elif com == 'toggle':
+        elif com == "toggle":
             if num in S:
                 S.discard(num)
             else:
