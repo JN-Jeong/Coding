@@ -1,4 +1,4 @@
-'''
+"""
 문제
 계단 오르기 게임은 계단 아래 시작점부터 계단 꼭대기에 위치한 도착점까지 가는 게임이다. <그림 1>과 같이 각각의 계단에는 일정한 점수가 쓰여 있는데 계단을 밟으면 그 계단에 쓰여 있는 점수를 얻게 된다.
 
@@ -40,7 +40,7 @@
 
 예제 출력 1
 75
-'''
+"""
 
 n = int(input())
 stairs = [int(input()) for _ in range(n)]
@@ -51,5 +51,7 @@ if n > 1:
     score[1] = score[0] + stairs[1]
 if n > 2:
     for i in range(2, n):
-        score[i] = max(score[i-2], score[i-3] + stairs[i-1]) + stairs[i] # + stairs[i] = 마지막 도착 계단
+        score[i] = (
+            max(score[i - 2], score[i - 3] + stairs[i - 1]) + stairs[i]
+        )  # + stairs[i] = 마지막 도착 계단
 print(score[-1])
