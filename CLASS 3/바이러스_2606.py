@@ -1,4 +1,4 @@
-'''
+"""
 문제
 신종 바이러스인 웜 바이러스는 네트워크를 통해 전파된다. 한 컴퓨터가 웜 바이러스에 걸리면 그 컴퓨터와 네트워크 상에서 연결되어 있는 모든 컴퓨터는 웜 바이러스에 걸리게 된다.
 
@@ -26,21 +26,23 @@
 
 예제 출력 1
 4
-'''
+"""
 
 n = int(input())
 connect = int(input())
-net = [[]*n for _ in range(n+1)]
+net = [[] * n for _ in range(n + 1)]
 
 for _ in range(connect):
     a, b = map(int, input().split())
     net[a].append(b)
     net[b].append(a)
 
-print(net) # 각 index번 컴퓨터에 연결된 컴퓨터 번호가 저장됨
+print(net)  # 각 index번 컴퓨터에 연결된 컴퓨터 번호가 저장됨
 
 cnt = 0
-visited = [0]*(n+1)
+visited = [0] * (n + 1)
+
+
 def dfs(start):
     global cnt
     visited[start] = 1
@@ -48,6 +50,7 @@ def dfs(start):
         if visited[i] == 0:
             dfs(i)
             cnt += 1
+
 
 dfs(1)
 print(cnt)
