@@ -1,4 +1,4 @@
-'''
+"""
 문제
 김진영이 듣도 못한 사람의 명단과, 보도 못한 사람의 명단이 주어질 때, 듣도 보도 못한 사람의 명단을 구하는 프로그램을 작성하시오.
 
@@ -24,19 +24,19 @@ clinton
 2
 baesangwook
 ohhenrie
-'''
+"""
 # collections의 Counter를 사용하면 쉽게 구현 가능
 
 N, M = map(int, input().split())
 
 name_dict = {}
 doodbo = []
-for _ in range(N+M):
+for _ in range(N + M):
     name = input()
     if not name in name_dict:
         name_dict[name] = 0
     name_dict[name] += 1
-    
+
     if name_dict[name] > 1:
         doodbo.append(name)
 
