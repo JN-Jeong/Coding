@@ -8,6 +8,7 @@ res = []
 time = sorted(time)
 time = sorted(time, key=lambda x:x[1])
 # => time = sorted(time, key = lambda x : (x[1], x[0])) # 왜 순서가 바뀌는지는 모르겠음...
+print(time)
 end = time[0][1]
 max_meeting = 1
 for i in range(1, len(time)):
