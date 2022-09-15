@@ -1,4 +1,4 @@
-'''
+"""
 문제
 준규가 가지고 있는 동전은 총 N종류이고, 각각의 동전을 매우 많이 가지고 있다.
 
@@ -27,7 +27,7 @@
 
 예제 출력 1
 6
-'''
+"""
 
 N, K = map(int, input().split())
 coins = []
@@ -39,9 +39,9 @@ for _ in range(N):
 
 count = 0
 while K > 1:
-    for i in range(len(coins)-1, -1, -1):
+    for i in range(len(coins) - 1, -1, -1):
         temp = K // coins[i]
-        K = K  % coins[i]
+        K = K % coins[i]
         count += temp
 
 print(count)
