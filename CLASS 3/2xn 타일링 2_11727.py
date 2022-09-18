@@ -1,4 +1,4 @@
-'''
+"""
 문제
 2×n 직사각형을 1×2, 2×1과 2×2 타일로 채우는 방법의 수를 구하는 프로그램을 작성하시오.
 
@@ -26,17 +26,17 @@
 12
 예제 출력3
 2731
-'''
+"""
 
 n = int(input())
 
 case = [1, 3]
 for i in range(2, n):
-    case.append(case[i-2] * 2 + case[i-1])
+    case.append(case[i - 2] * 2 + case[i - 1])
 
 if n < 2:
-    print(case[0]%10007)
+    print(case[0] % 10007)
 elif n < 3:
-    print(case[1]%10007)
+    print(case[1] % 10007)
 else:
-    print(case[-1]%10007)
+    print(case[-1] % 10007)
