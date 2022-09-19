@@ -1,4 +1,4 @@
-'''
+"""
 문제
 수 N개가 주어졌을 때, i번째 수부터 j번째 수까지 합을 구하는 프로그램을 작성하시오.
 
@@ -24,9 +24,10 @@
 12
 9
 1
-'''
+"""
 
 import sys
+
 N, M = map(int, sys.stdin.readline().split())
 num_list = list(map(int, sys.stdin.readline().split()))
 sum_list = [0]
@@ -35,4 +36,4 @@ for i in range(len(num_list)):
 
 for _ in range(M):
     i, j = map(int, sys.stdin.readline().split())
-    print(sum_list[j] - sum_list[i-1])
+    print(sum_list[j] - sum_list[i - 1])
