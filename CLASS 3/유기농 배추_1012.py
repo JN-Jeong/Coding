@@ -1,4 +1,4 @@
-'''
+"""
 문제
 차세대 영농인 한나는 강원도 고랭지에서 유기농 배추를 재배하기로 하였다. 농약을 쓰지 않고 배추를 재배하려면 배추를 해충으로부터 보호하는 것이 중요하기 때문에, 한나는 해충 방지에 효과적인 배추흰지렁이를 구입하기로 결심한다. 이 지렁이는 배추근처에 서식하며 해충을 잡아 먹음으로써 배추를 보호한다. 특히, 어떤 배추에 배추흰지렁이가 한 마리라도 살고 있으면 이 지렁이는 인접한 다른 배추로 이동할 수 있어, 그 배추들 역시 해충으로부터 보호받을 수 있다. 한 배추의 상하좌우 네 방향에 다른 배추가 위치한 경우에 서로 인접해있는 것이다.
 
@@ -55,40 +55,42 @@
 
 예제 출력 2
 2
-'''
+"""
 
 from collections import deque
 
 T = int(input())
 
-dx = [0,0,1,-1] # 좌우
-dy = [1,-1,0,0] # 상하
+dx = [0, 0, 1, -1]  # 좌우
+dy = [1, -1, 0, 0]  # 상하
+
 
 def bfs(a, b, loc):
     q = deque()
-    q.append((a,b))
+    q.append((a, b))
     loc[a][b] = 0
 
     while q:
         x, y = q.pop()
-        for i in range(4): # 상하좌우에서 1을 찾음
+        for i in range(4):  # 상하좌우에서 1을 찾음
             nx = x + dx[i]
             ny = y + dy[i]
-            if nx < 0 or nx >= M or ny < 0 or ny >= N: # 땅의 범위를 벗어났을 때 continue
+            if nx < 0 or nx >= M or ny < 0 or ny >= N:  # 땅의 범위를 벗어났을 때 continue
                 continue
-            if loc[nx][ny] == 1: # 값이 1이라면(배추가 심어져있다면)
+            if loc[nx][ny] == 1:  # 값이 1이라면(배추가 심어져있다면)
                 loc[nx][ny] = 0  # 다시 방문하는 것을 방지하기 위해 값을 0으로 설정
                 q.append((nx, ny))
     return
 
+
 for _ in range(T):
-    M, N, K = (map(int, input().split()))
-    loc = [[0]*N for _ in range(M)]
+    M, N, K = map(int, input().split())
+    loc = [[0] * N for _ in range(M)]
 
     for _ in range(K):
         x, y = map(int, input().split())
         loc[x][y] = 1
-    
+
     worm = 0
 
     for i in range(M):
