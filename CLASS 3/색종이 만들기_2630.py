@@ -1,4 +1,4 @@
-'''
+"""
 문제
 아래 <그림 1>과 같이 여러개의 정사각형칸들로 이루어진 정사각형 모양의 종이가 주어져 있고, 각 정사각형들은 하얀색으로 칠해져 있거나 파란색으로 칠해져 있다. 주어진 종이를 일정한 규칙에 따라 잘라서 다양한 크기를 가진 정사각형 모양의 하얀색 또는 파란색 색종이를 만들려고 한다.
 
@@ -34,24 +34,26 @@
 예제 출력 1
 9
 7
-'''
+"""
 
 N = int(input())
 
 CP = [list(map(int, input().split())) for _ in range(N)]
 cut_CP = []
 
+
 def make_CP(x, y, N):
     color = CP[x][y]
-    for i in range(x, x+N):
-        for j in range(y, y+N):
+    for i in range(x, x + N):
+        for j in range(y, y + N):
             if color != CP[i][j]:
-                make_CP(x, y, N//2)
-                make_CP(x+N//2, y, N//2)
-                make_CP(x, y+N//2, N//2)
-                make_CP(x+N//2, y+N//2, N//2)
+                make_CP(x, y, N // 2)
+                make_CP(x + N // 2, y, N // 2)
+                make_CP(x, y + N // 2, N // 2)
+                make_CP(x + N // 2, y + N // 2, N // 2)
                 return
     cut_CP.append(color)
+
 
 make_CP(0, 0, N)
 print(cut_CP.count(0))
