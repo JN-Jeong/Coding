@@ -102,7 +102,7 @@ def left_right_search(name, index, cost):
     left_index, left_distance = check_index(name, index, -1)
     right = left_right_search(name[:], right_index, cost + right_distance)  # 오른쪽으로 진행했을 때 조작 횟수가 최소인 경우를 갱신
     left = left_right_search(name[:], left_index, cost + left_distance)     # 왼쪽으로 진행했을 때 조작 횟수가 최소인 경우를 갱신
-                                                                            # 각 indxe마다 각각의 방향으로 진행하면서 최소인 경우를 갱신하도록 함
+                                                                            # 각 index마다 각각의 방향으로 진행하면서 최소인 경우를 갱신하도록 함
     return min(left, right)
 
 def check_index(name, index, term): # index 부터 왼쪽 또는 오른쪽으로 진행하면서
