@@ -1,4 +1,4 @@
-'''
+"""
 문제 설명
 0 또는 양의 정수가 주어졌을 때, 정수를 이어 붙여 만들 수 있는 가장 큰 수를 알아내 주세요.
 
@@ -14,15 +14,18 @@ numbers의 원소는 0 이상 1,000 이하입니다.
 numbers	return
 [6, 10, 2]	"6210"
 [3, 30, 34, 5, 9]	"9534330"
-'''
+"""
+
+
 def solution(numbers):
-    answer = ''
+    answer = ""
     numbers = list(map(str, numbers))
-    numbers = sorted(numbers, key=lambda x:x, reverse=True)
+    numbers = sorted(numbers, key=lambda x: x, reverse=True)
     print(numbers)
-    numbers = sorted(numbers, key=lambda x:x*3, reverse=True)
+    numbers = sorted(numbers, key=lambda x: x * 3, reverse=True)
     print(numbers)
-    answer = str(int(''.join(numbers)))
+    answer = str(int("".join(numbers)))
     return answer
+
 
 # 343434 333 303030
