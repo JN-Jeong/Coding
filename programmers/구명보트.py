@@ -58,7 +58,8 @@ def solution(people, limit):
 
 
 if __name__ == "__main__":
-    # people = [70, 60, 60, 50, 70, 65, 80, 90, 30, 40, 90, 35, 80, 70]
-    people = [70, 50, 80, 50]
-    limit = 100
-    print(solution(people, limit))
+    peoples = [[70, 60, 60, 50, 70, 65, 80, 90, 30, 40, 90, 35, 80, 70], [70, 50, 80, 50], [70, 80, 50]]
+    limits = [100, 100, 100]
+
+    for people, limit in zip(peoples, limits):
+        print(solution(people, limit))
