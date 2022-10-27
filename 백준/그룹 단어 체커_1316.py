@@ -11,9 +11,10 @@ for문이 종료될 때까지 False가 반환되지 않았다면 True를 반환
 
 N = int(input())
 
+
 def check_groupWord(word):
     groupWords = {}
-    temp = ''
+    temp = ""
     for c in word:
         if c != temp:
             if c in groupWords:
@@ -21,7 +22,8 @@ def check_groupWord(word):
             groupWords[c] = 1
             temp = c
     return True
-        
+
+
 num = 0
 for i in range(N):
     word = input()
