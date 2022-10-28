@@ -1,4 +1,4 @@
-'''
+"""
 참고
 https://zoosso.tistory.com/550
 
@@ -7,7 +7,7 @@ https://zoosso.tistory.com/550
 
 7
 -------------
-'''
+"""
 
 # N, M = map(int, input().split())
 # A = [0] + list(map(int, input().split())) # 런타임 에러(NameError) 발생함, 왜지?
