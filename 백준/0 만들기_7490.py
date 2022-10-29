@@ -20,7 +20,8 @@
 
 
 # eval X
-def solve(form, n, concat_n, oper, result):   # 수식, 다음 수열 값, 연산자, 이어 붙인 값(계산 할 값), 현재까지의 계산 결과
+# 수식, 다음 수열 값, 연산자, 이어 붙인 값(계산 할 값), 현재까지의 계산 결과
+def solve(form, n, concat_n, oper, result):
     if n == N:
         result = result + (oper * concat_n)
         # print(result)
@@ -29,16 +30,16 @@ def solve(form, n, concat_n, oper, result):   # 수식, 다음 수열 값, 연�
             return
     else:
         # ASCII 순서 맞춰줘야함 (공백, +, -(32, 43, 45) 순으로)
-        solve(form + ' ' + str(n+1), n+1, concat_n*10 + n+1, oper,                   result)
-        solve(form + '+' + str(n+1), n+1,               n+1,    1, result + oper * concat_n)
-        solve(form + '-' + str(n+1), n+1,               n+1,   -1, result + oper * concat_n)
+        solve(form + " " + str(n + 1), n + 1, concat_n * 10 + n + 1, oper, result)
+        solve(form + "+" + str(n + 1), n + 1, n + 1, 1, result + oper * concat_n)
+        solve(form + "-" + str(n + 1), n + 1, n + 1, -1, result + oper * concat_n)
 
 
 T = int(input())
 
 for i in range(T):
     N = int(input())
-    solve('1', 1, 1, 1, 0)
+    solve("1", 1, 1, 1, 0)
     print()
 
 
@@ -49,7 +50,7 @@ for i in range(T):
 #     if len(array) == n:
 #         operators_list.append(copy.deepcopy(array))
 #         return
-    
+
 #     array.append(' ')
 #     recur(array, n)
 #     array.pop()
