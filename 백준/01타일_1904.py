@@ -12,5 +12,5 @@ else:
     while n < N:
         memo[1], memo[2] = memo[2], (memo[1] + memo[2]) % 15746
         n += 1
-    
+
     print(memo[-1])
