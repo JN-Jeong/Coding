@@ -5,6 +5,7 @@ DP 문제라고 함
 index 필요 없음
 """
 
+
 def solve():
     A_size = int(input())
     A = list(map(int, input().split()))
@@ -16,11 +17,11 @@ def solve():
             if A[i] > A[j]:
                 if memo[i] <= memo[j]:
                     memo[i] = memo[j] + 1
-                print(i,j)
+                print(i, j)
                 print("memo : ", memo[i], memo[j])
-                
-    
+
     return max(memo)
+
 
 if __name__ == "__main__":
     print(solve())
