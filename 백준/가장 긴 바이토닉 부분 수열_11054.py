@@ -1,9 +1,9 @@
-'''
+"""
 10
 1 5 2 1 4 3 4 5 2 1
 
 띄엄띄엄 수열이 만들어져도 됨
-'''
+"""
 
 N = int(input())
 A = list(map(int, input().split()))
@@ -25,7 +25,7 @@ for i in range(N):
 
 result = [0 for _ in range(N)]
 for i in range(N):
-    result[i] = inc[i] + dec[N-i-1] - 1
+    result[i] = inc[i] + dec[N - i - 1] - 1
 
 print(result)
 print(max(result))
