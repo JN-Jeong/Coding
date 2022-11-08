@@ -31,7 +31,6 @@
 # sys.stdin.readline()으로 통과
 import sys
 
-
 N, M = map(int, sys.stdin.readline().split())
 tables = [[0] * (N+1)]
 for _ in range(N):
