@@ -5,23 +5,25 @@
 
 N = int(input())
 
+
 def pattern(n):
     if n == 1:
-        return ['*']
+        return ["*"]
 
-    stars = pattern(n//3)
+    stars = pattern(n // 3)
     patterns = []
 
     for star in stars:
-        patterns.append(star*3)
+        patterns.append(star * 3)
     for star in stars:
-        patterns.append(star + ' ' * (n//3) + star)
+        patterns.append(star + " " * (n // 3) + star)
     for star in stars:
-        patterns.append(star*3)
+        patterns.append(star * 3)
 
     print(patterns)
 
     return patterns
 
+
 # pattern(N)
-print('\n'.join(pattern(N)))
+print("\n".join(pattern(N)))
