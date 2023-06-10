@@ -9,12 +9,12 @@ def solve():
         for j in range(M):
             if board[i][j] == "R":
                 red = (i, j)
-            elif board[i][j] == "B":
+            if board[i][j] == "B":
                 blue = (i, j)
 
-    # 상하좌우 탐색 (하상우좌)
-    dx = [1, -1, 0, 0]
-    dy = [0, 0, 1, -1]
+    # 상하좌우
+    dx = [-1, 1, 0, 0]
+    dy = [0, 0, -1, 1]
 
     """
     구슬 이동함수 (동서남북 방향으로 벽을 만날 때까지 이동, 위치 인덱스와 이동한 횟수를 인자로 받음)
@@ -78,24 +78,13 @@ def solve():
             ny = y + dy[direction]
             dis += 1
 
-            f = is_wall(nx, ny)
-            if f == 0:  # 더 이상 이동할 수 없다면 x, y 반환
+            if nx >= len(board) or ny >= len(board[0]) or nx < 0 or ny < 0 or board[nx][ny] == "#":
                 return (x, y, dis)
-            elif f == 2:
+            elif board[nx][ny] == "O":
                 return (nx, ny, dis)
-            else:  # 이동할 수 있다면 이동
+            else:
                 x = nx
                 y = ny
-
-    # 구슬이 이동 할 수 있는지 판단 (이동 할 수 없다면 0, 있다면 1, goal이면 2 반환)
-    def is_wall(x, y):  # i : 행 index, j : 열 index
-
-        if board[x][y] == "O":
-            return 2
-        elif x >= len(board) or y >= len(board[0]) or x < 0 or y < 0 or board[x][y] == "#":
-            return 0
-        else:
-            return 1
 
     answer = bfs()
     if not answer:
