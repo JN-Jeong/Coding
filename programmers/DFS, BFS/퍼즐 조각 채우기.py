@@ -7,13 +7,11 @@ game_boards의 빈 칸을 찾고 해당 빈 칸의 도형과 같은 도형을 ta
 
 from collections import deque
 
-# import numpy as np
-
 
 def solution(game_board, table):
     answer = 0
     shapes = []
-    print_board(game_board)
+    # print_board(game_board)
     # print_board(table)
 
     shape_size = []
@@ -33,12 +31,12 @@ def solution(game_board, table):
             shape = rotate(shape)
             if is_match(shape, game_board):
                 answer += shape_size[idx]
-                print_shape(shape)
-                print_board(board)
+                # print_shape(shape)
+                # print_board(game_board)
                 break
 
     # print("shapes : ", shapes)
-    print_shapes(shapes)
+    # print_shapes(shapes)
 
     return answer
 
