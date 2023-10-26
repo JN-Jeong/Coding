@@ -13,11 +13,11 @@ from collections import deque
 def solution(n, wires):
     answer = float("inf")
 
+    graph = make_graph(n, wires)
+    # print(graph)
     for wire in wires:
-        graph = make_graph(n, wires)
-        # print(graph)
-        temp = search(graph, wire)
-        answer = min(answer, abs((n - temp) - temp))
+        result = search(graph, wire)
+        answer = min(answer, abs((n - result) - result))
 
     return answer
 
