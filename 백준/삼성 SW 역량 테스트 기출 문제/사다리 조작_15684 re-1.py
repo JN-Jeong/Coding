@@ -10,6 +10,10 @@ def solution():
     for _ in range(M):
         r, c = map(int, input().split())
         board[r - 1][c - 1] = 1
+        
+    for b in board:
+        print(b)
+    print()
 
     def check():
         for col in range(N):
